@@ -196,61 +196,83 @@ body {
     background: rgba(255, 215, 0, 0.2);
 }
 
-.wheel-hotspot{
-    position:absolute;
-    transform:translate(-50%,-50%);
+/* ========================= */
+/* 輪盤文字 */
+/* ========================= */
 
-    font-family:"zhuque";
-    font-size:36px;
-    color:#D9C39A;
+.wheel-hotspot{
+
+    position:absolute;
+
+    width:80px;
+    height:80px;
 
     text-decoration:none;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    transition:.35s;
+
+    cursor:pointer;
+
+}
+
+/* 每個字 */
+
+.wheel-hotspot .char{
+
+    position:absolute;
+
+    font-family:"zhuque";
+
+    font-size:34px;
+
+    color:#D7C29A;
 
     transition:.35s;
 
-    text-shadow:
-        0 0 5px rgba(0,0,0,.5);
-
-    cursor:pointer;
 }
 
-.wheel-hotspot:hover{
+/* Hover */
 
-    color:#FFD87C;
+.wheel-hotspot:hover .char{
 
-    transform:translate(-50%,-50%) scale(1.12);
+    color:#FFD87A;
 
     text-shadow:
-        0 0 8px #FFD87C,
-        0 0 18px rgba(255,215,120,.8),
-        0 0 28px rgba(255,215,120,.4);
+        0 0 8px #FFD87A,
+        0 0 18px rgba(255,215,120,.8);
 
-}.wheel-hotspot.active{
+}
+
+/* 目前頁面 */
+
+.wheel-hotspot.active .char{
 
     color:#FFE5A5;
-
-    text-shadow:
-        0 0 10px #FFD87C,
-        0 0 20px rgba(255,215,120,.8);
 
     animation:glow 2s infinite;
 
 }
 
-.link-culture {
-    left: 10%;
-    top: 26%;
-    rotate: -77deg;
+.link-culture{
+
+    left:10%;
+    top:25%;
+
+    transform:
+        translate(-50%,-50%)
+        rotate(-78deg);
+
 }
 
-.link-craft {
-    left: 23%;
-    top: 13%;
-    rotate: -48deg;
+.link-craft{
+
+    left:25%;
+    top:13%;
+
+    transform:
+        translate(-50%,-50%)
+        rotate(-45deg);
+
 }
 
 .link-legacy {
