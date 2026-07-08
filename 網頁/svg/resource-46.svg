@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_2" data-name="图层 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 75.07 84.08">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f8efe8;
+        fill-rule: evenodd;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-3, .cls-4 {
+        stroke: #f8efe8;
+        stroke-width: 1.63px;
+      }
+
+      .cls-4 {
+        stroke-linecap: round;
+      }
+
+      .cls-5 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-2" x="0" width="75.07" height="84.08"/>
+    </clipPath>
+  </defs>
+  <g id="_图层_3" data-name="图层 3">
+    <g class="cls-5">
+      <path class="cls-1" d="M45.92,44.37c.15-.09.34.02.34.19l-.11,10.1c0,.08-.08.13-.16.1l-9.38-4.16c-.16-.07-.18-.3-.03-.39l9.33-5.84Z"/>
+      <path class="cls-4" d="M45.92,44.37c.15-.09.34.02.34.19l-.11,10.1c0,.08-.08.13-.16.1l-9.38-4.16c-.16-.07-.18-.3-.03-.39l9.33-5.84Z"/>
+      <path class="cls-3" d="M24.13,39.29c-5.44,10.24-1.54,22.95,8.7,28.39,10.24,5.44,22.95,1.54,28.39-8.7,5.44-10.24,1.54-22.95-8.7-28.39-4.63-2.46-9.77-3.01-14.51-1.93"/>
+      <path class="cls-3" d="M.8,7.24c2.56,1.96,4.59,3.54,6.09,4.76,17.67,14.27,30.05,27.56,37.12,39.87"/>
+    </g>
+  </g>
+</svg>
