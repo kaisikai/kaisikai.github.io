@@ -201,7 +201,7 @@ body {
     transform:translate(-50%,-50%);
 
     font-family:"zhuque";
-    font-size:36px;
+    font-size:40px;
     color:#D9C39A;
 
     text-decoration:none;
@@ -248,32 +248,32 @@ body {
 }
 
 .link-craft {
-    left: 23%;
+    left: 25%;
     top: 13%;
-    rotate: -48deg;
+    rotate: -41deg;
 }
 
 .link-legacy {
-    left: 41%;
-    top: 9%;
-    rotate: -16deg;
+    left: 43%;
+    top: 8%;
+    rotate: -13deg;
 }
 
 .link-game {
-    left: 58%;
-    top: 14%;
-    rotate: 20deg;
+    left: 60%;
+    top: 13%;
+    rotate: 18deg;
 }
 
 .link-product {
-    left: 71%;
+    left: 73%;
     top: 26%;
     rotate: 47deg;
 }
 
 .link-member {
-    left: 75%;
-    top: 44%;
+    left: 78%;
+    top: 43%;
     rotate: 77deg;
 }
 
