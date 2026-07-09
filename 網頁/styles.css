@@ -14,14 +14,14 @@ body {
     position: relative;
     background-color: #090909;
     background-image: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.38)), var(--page-bg);
-    background-size: fill;
+    background-size: cover;
     background-position: center;
     color: #f8efe8;
     font-family: 'zhuque', serif;
 }
 
 .home-page{
-    --page-bg: url('./png/background.png');
+    --page-bg: url('./png/home-bg.png');
 }
     
 .culture-page{
@@ -31,6 +31,23 @@ body {
 .craft-page{
     --page-bg: url('./png/craft-bg.png');
 }
+
+.game-page{
+    --page-bg: url('./png/game-bg.png');
+}
+
+.legacy-page{
+    --page-bg: url('./png/legacy-bg.png');
+}
+
+.member-page{
+    --page-bg: url('./png/member-bg.png');
+}
+
+.product-page{
+    --page-bg: url('./png/product-bg.png');
+}
+
 .logo {
     position: absolute;
     top: 18px;
@@ -93,25 +110,21 @@ body {
 
 }
 
-.content-grid h2{
 
-    color:#F0DFC0;
-
-    font-size:42px;
-
-    margin-bottom:35px;
-
-}
 
 .content-grid h3{
 
-    color:#D6B16A;
+  
 
-    font-size:28px;
+    font-size:27px;
 
     margin-top:30px;
 
     margin-bottom:15px;
+
+    border-left:10px solid #673a1b;
+
+    padding-left:10px;
 
 }
 
@@ -131,225 +144,116 @@ body {
 
 }
 
-.content-grid h3{
+#wheelNav svg{
 
-    border-left:6px solid #B78C46;
+    width:500px;
 
-    padding-left:12px;
+    height:500px;
+
+    display:block;
 
 }
 
-.nav-trigger{
+#wheelNav{
+
     position:fixed;
-    left:0;
-    right:0;
-    bottom:0;
-    height:40px;      /* 底部40px感應區 */
-    z-index:998;}
 
-.wheel-nav {
-    position: fixed;
-    left: 50%;
-    bottom: -210px;
-    width: min(440px, 86vw);
-    aspect-ratio: 1;
-    transform: translateX(-50%);
-    z-index: 5;
+    bottom:-480px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    transition:.7s cubic-bezier(.25,.8,.25,1);
+
 }
 
-.wheel-nav:hover{
-    bottom: -210px;
-    transition: bottom .65s cubic-bezier(.2,.8,.2,1);
-}
-.nav-wheel {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform: rotate(var(--wheel-rotation, 0deg));
-    transform-origin: center;
-    transition: transform .65s cubic-bezier(.2,.8,.2,1);
+#wheelNav.show{
+
+    bottom:-250px;
+
 }
 
-.wheel-art {
-    width: 100%;
-    height: 100%;
-    display: block;
-    filter: drop-shadow(0 12px 26px rgba(0,0,0,.45));
-    user-select: none;
-    pointer-events: none;
-}
-
-.wheel-home {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 22%;
-    height: 22%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: 10;
-    cursor: pointer;
-}
-
-/* 測試用，確認位置後可刪除 */
-.wheel-home:hover {
-    background: rgba(255, 215, 0, 0.2);
-}
-
-.wheel-hotspot{
-    position:absolute;
-    transform:translate(-50%,-50%);
-
-    font-family:"zhuque";
-    font-size:40px;
-    color:#D9C39A;
-
-    text-decoration:none;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    transition:.35s;
-
-    text-shadow:
-        0 0 5px rgba(0,0,0,.5);
+.nav-item{
 
     cursor:pointer;
-}
-
-.wheel-hotspot:hover{
-
-    color:#FFD87C;
-
-    transform:translate(-50%,-50%) scale(1.12);
-
-    text-shadow:
-        0 0 8px #FFD87C,
-        0 0 18px rgba(255,215,120,.8),
-        0 0 28px rgba(255,215,120,.4);
-
-}.wheel-hotspot.active{
-
-    color:#FFE5A5;
-
-    text-shadow:
-        0 0 10px #FFD87C,
-        0 0 20px rgba(255,215,120,.8);
-
-    animation:glow 2s infinite;
+    pointer-events:bounding-box;
+    transition:
+    transform .35s ease,
+    filter .35s ease;
 
 }
 
-.link-culture {
-    left: 10%;
-    top: 26%;
-    rotate: -77deg;
+.label{
+
+    fill:#D4C09A;
+
 }
 
-.link-craft {
-    left: 25%;
-    top: 13%;
-    rotate: -41deg;
+.nav-item:hover .label{
+
+    fill:url(#goldGradient);
+
+    filter:url(#goldGlow);
+
 }
 
-.link-legacy {
-    left: 43%;
-    top: 8%;
-    rotate: -13deg;
+.nav-item.active{
+
+    filter:url(#goldGlow);
+
 }
 
-.link-game {
-    left: 60%;
-    top: 13%;
-    rotate: 18deg;
+.nav-item.active .label{
+
+    fill:#FFE5A5;
+
 }
 
-.link-product {
-    left: 73%;
-    top: 26%;
-    rotate: 47deg;
+.nav-item{
+
+    transition:.25s;
+
 }
 
-.link-member {
-    left: 78%;
-    top: 43%;
-    rotate: 77deg;
+.nav-item:active{
+
+
+    animation:
+    breathe 2.5s ease infinite;
+
 }
 
-.rotate-arrow {
-    position: absolute;
-    top: 28%;
-    width: clamp(42px, 8vw, 58px);
-    height: clamp(48px, 9vw, 66px);
-    padding: 0;
-    border: 0;
-    background: transparent;
-    cursor: pointer;
-    z-index: 3;
-    transition: transform .25s ease, opacity .25s ease, filter .25s ease;
+@keyframes breathe{
+
+0%{
+
+filter:url(#goldGlow);
+
 }
 
-/*.rotate-arrow-left {
-    left: clamp(-22px, -3vw, -10px);
-    transform: translate(-100%, -50%);
+50%{
+
+filter:
+drop-shadow(0 0 18px #FFD87A);
+
 }
 
-.rotate-arrow-right {
-    right: clamp(-22px, -3vw, -10px);
-    transform: translate(100%, -50%);
+100%{
+
+filter:url(#goldGlow);
+
 }
 
-.rotate-arrow img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    pointer-events: none;
-}
-
-.rotate-arrow:hover,
-.rotate-arrow:focus-visible {
-    opacity: .86;
-    filter: drop-shadow(0 0 10px rgba(248,239,232,.45));
-    outline: none;
-}
-
-.rotate-arrow-left:hover,
-.rotate-arrow-left:focus-visible {
-    transform: translate(-100%, -50%) scale(1.08);
-}
-
-.rotate-arrow-right:hover,
-.rotate-arrow-right:focus-visible {
-    transform: translate(100%, -50%) scale(1.08);
-}*/
-
-@media (max-width: 560px) {
-    .wheel-nav {
-        width: min(360px, 92vw);
-        bottom: -150px;
-    }
-
-    .rotate-arrow {
-        top: 30%;
-    }
-
-    .rotate-arrow-left {
-        left: 34px;
-    }
-
-    .rotate-arrow-right {
-        right: 34px;
-    }
 }
 
 .article{
 
     position:fixed;
 
-    top:120px;          /* 標題下面 */
+    top:110px;          /* 標題下面 */
 
-    bottom:120px;       /* 底部導航上面 */
+    bottom:100px;       /* 底部導航上面 */
 
     left:50%;
 
@@ -367,6 +271,15 @@ body {
 
     font-size:22px;
 
+    scrollbar-width:none;
+
+}
+
+.article h3{
+
+    border-left:10px solid #673a1b;
+
+    padding-left:10px;
 }
 
 .article section{
@@ -396,10 +309,7 @@ body {
     width:0px;
 }
 
-.article{
 
-    scrollbar-width:none;
-}
 
 .side-nav{
 
