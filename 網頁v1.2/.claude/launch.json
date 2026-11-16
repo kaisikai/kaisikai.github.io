@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "site",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": ["-c", "cd /private/tmp/claude-501/-Users-elaine--claude-spares-spare-RWrU4P/b5ac4754-ba1c-49a6-9486-ec5300e7a6c5/scratchpad/site && exec python3 -m http.server 5517 --bind 127.0.0.1"],
+      "port": 5517
+    }
+  ]
+}

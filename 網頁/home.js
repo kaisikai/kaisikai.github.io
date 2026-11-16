@@ -1,24 +1,58 @@
-const wheel = document.getElementById("nav-wheel");
-const rotateButtons = document.querySelectorAll(".rotate-arrow");
+const wheel = document.getElementById("wheelNav");
 
-let wheelAngle = 0;
-const wheelStep = 24;
+document.querySelectorAll(".nav-item").forEach(item=>{
 
-rotateButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-        if (!wheel) return;
+    item.onclick=()=>{
 
-        wheelAngle += Number(button.dataset.direction) * wheelStep;
-        wheel.style.setProperty("--wheel-rotation", `${wheelAngle}deg`);
-    });
+        location.href=item.dataset.page;
+
+    }
+
+})
+
+let hideTimer = null;
+
+// 滑鼠接近底部時展開
+document.addEventListener("mousemove", (e) => {
+
+    if (e.clientY > window.innerHeight - 50) {
+
+        clearTimeout(hideTimer);
+        wheel.classList.add("show");
+
+    } else {
+
+        // 如果滑鼠不在輪盤上，延遲收回
+        if (!wheel.matches(":hover")) {
+
+            clearTimeout(hideTimer);
+
+            hideTimer = setTimeout(() => {
+                wheel.classList.remove("show");
+            }, 100);
+
+        }
+
+    }
+
 });
 
+// 滑鼠進入輪盤
+wheel.addEventListener("mouseenter", () => {
 
+    clearTimeout(hideTimer);
+    wheel.classList.add("show");
 
+});
 
+// 滑鼠離開輪盤
+wheel.addEventListener("mouseleave", () => {
 
+    hideTimer = setTimeout(() => {
+        wheel.classList.remove("show");
+    }, 400);
 
-
+});
 
 const article = document.querySelector(".article");
 const sections = article.querySelectorAll("section");
